@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31919.166
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IMDB_Web", "IMDB_Web\IMDB_Web.csproj", "{03C01A98-0CEB-40A1-BE3B-4D511904AD56}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IMDB_WebAPI", "IMDB_WebAPI\IMDB_WebAPI.csproj", "{DD3FB517-A598-4EC9-BB93-10A20CD68404}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IMDB_DBContexts", "IMDB_DBContexts\IMDB_DBContexts.csproj", "{400EB8E0-9ABC-43F2-872E-E053ECC40BF7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IMBD_Repository", "IMBD_Repository\IMBD_Repository.csproj", "{521ACB0F-EDD7-43FE-B0F3-3259F6A1ACBC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IMDB_Interface", "IMDB_Interface\IMDB_Interface.csproj", "{D70D5184-7E65-4715-BAC3-9B2D9B58747F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IMDB_EntityModels", "IMDB_EntityModels\IMDB_EntityModels.csproj", "{DD57FED1-8DF6-4CF7-8FF3-43860686E8B7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{03C01A98-0CEB-40A1-BE3B-4D511904AD56}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{03C01A98-0CEB-40A1-BE3B-4D511904AD56}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{03C01A98-0CEB-40A1-BE3B-4D511904AD56}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{03C01A98-0CEB-40A1-BE3B-4D511904AD56}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DD3FB517-A598-4EC9-BB93-10A20CD68404}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD3FB517-A598-4EC9-BB93-10A20CD68404}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD3FB517-A598-4EC9-BB93-10A20CD68404}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD3FB517-A598-4EC9-BB93-10A20CD68404}.Release|Any CPU.Build.0 = Release|Any CPU
+		{400EB8E0-9ABC-43F2-872E-E053ECC40BF7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{400EB8E0-9ABC-43F2-872E-E053ECC40BF7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{400EB8E0-9ABC-43F2-872E-E053ECC40BF7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{400EB8E0-9ABC-43F2-872E-E053ECC40BF7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{521ACB0F-EDD7-43FE-B0F3-3259F6A1ACBC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{521ACB0F-EDD7-43FE-B0F3-3259F6A1ACBC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{521ACB0F-EDD7-43FE-B0F3-3259F6A1ACBC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{521ACB0F-EDD7-43FE-B0F3-3259F6A1ACBC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D70D5184-7E65-4715-BAC3-9B2D9B58747F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D70D5184-7E65-4715-BAC3-9B2D9B58747F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D70D5184-7E65-4715-BAC3-9B2D9B58747F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D70D5184-7E65-4715-BAC3-9B2D9B58747F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DD57FED1-8DF6-4CF7-8FF3-43860686E8B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD57FED1-8DF6-4CF7-8FF3-43860686E8B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD57FED1-8DF6-4CF7-8FF3-43860686E8B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD57FED1-8DF6-4CF7-8FF3-43860686E8B7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BBE06DC7-D520-4816-929D-4CF36F934FFC}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,205 @@
+﻿@{
+    ViewData["Title"] = "Dashboard";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<main id="main" class="main">
+
+    <div class="pagetitle">
+        <h1>Dashboard</h1>
+        <nav>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="index.html">Movie</a></li>
+                <li class="breadcrumb-item active">Dashboard</li>
+            </ol>
+        </nav>
+    </div><!-- End Page Title -->
+
+    <section class="section">
+        <div class="row">
+            <div class="col-lg-12">
+
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Movie List <a href="javascript:void(0)" class="btnMovieAdd" id="btnAddMovie"><i class="ri-add-circle-line"></i></a></h5>
+
+                        <p></p>
+
+                        <!-- Table with stripped rows -->
+                        <table class="table datatable">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">Year of release</th>
+                                    <th scope="col">Producer</th>
+                                    <th scope="col">Actors</th>
+                                    <th scope="col">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tbodyMovie">
+                            </tbody>
+                        </table>
+                        <!-- End Table with stripped rows -->
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="modal fade" id="movieModal" tabindex="-1">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="myModelLabel"></h5>
+                            <button type="button" class="btn-close" id="btnMovieClose" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <fieldset class="row mb-3">
+                                <div class="col-sm-12">
+                                    <div id="divSelection" class="form-check">
+                                        <label class="form-check-label" for="Movie" style="margin-right:31px;">
+                                            <input class="form-check-input" type="radio" name="gridRadios" id="rdoMovie" value="Movie" checked>
+                                            Movie
+                                        </label>
+                                        <label class="form-check-label" for="Producer" style="margin-right:31px;">
+                                            <input class="form-check-input" type="radio" name="gridRadios" id="rdoProducer" value="Producers">
+                                            Producers
+                                        </label>
+                                        <label class="form-check-label" for="Actor" style="margin-right:31px;">
+                                            <input class="form-check-input" type="radio" name="gridRadios" id="rdoActor" value="Actors">
+                                            Actors
+                                        </label>
+                                    </div>
+                                </div>
+                            </fieldset>
+
+                            <div id="divMovie">
+                                <form id="formMovie" class="row g-3 needs-validation" novalidate>
+                                    <input type="hidden" id="hdnMovieId" value="00000000-0000-0000-0000-000000000000" />
+                                    <div class="col-md-4">
+                                        <label for="lblMovieName" class="col-form-label">Movie Name</label>
+                                        <input type="text" id="txtMovieName" class="form-control svalidate" name="MovieName"
+                                               data-val="true" data-val-required="Movie Name is required." placeholder="Movie Name" />
+                                        <span class="text-danger error field-validation-valid" data-valmsg-for="MovieName" data-valmsg-replace="true"></span>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label for="lblMovieReleaseYear" class="col-form-label">Release Movie Year </label>
+                                        <input type="text" id="txtMovieReleaseYear" class="form-control svalidate" name="MovieReleaseYear"
+                                               data-val="true" data-val-required="Release Movie Year is required." placeholder="Release Movie Year" />
+                                        <span class="text-danger error field-validation-valid" data-valmsg-for="MovieReleaseYear" data-valmsg-replace="true"></span>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label for="lblMoviePlot" class="col-form-label">Movie Plot</label>
+                                        <input type="text" id="txtMoviePlot" class="form-control svalidate" name="MoviePlot" placeholder="Movie Plot" />
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label for="lblMoviePoster" class="col-form-label">Movie Poster</label>
+                                        <input type="file" id="txtMoviePoster" class="form-control svalidate" name="MoviePoster" placeholder="MoviePoster" />
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label for="lblProducer" class="form-label">Producer</label>
+                                        <select class="form-select" id="ddlProducer" name="Producer" data-val="true" data-val-required="Producer is required.">
+                                        </select>
+                                        <span class="text-danger error field-validation-valid" data-valmsg-for="Producer" data-valmsg-replace="true"></span>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label for="lblActor" class="form-label">Actors</label>
+                                        <select class="form-select" id="ddlActor" name="Actor" data-val="true" data-val-required="Actor is required." multiple="multiple">
+                                        </select>
+                                        <span class="text-danger error field-validation-valid" data-valmsg-for="Actor" data-valmsg-replace="true"></span>
+                                    </div>
+                                </form>
+                            </div>
+
+                            <div id="divProducers">
+                                <form id="formProducer" class="row g-3 needs-validation" novalidate>
+                                    <div class="col-md-4">
+                                        <label for="lblProducerName" class="col-form-label">Producer Name</label>
+                                        <input type="text" id="txtProducerName" class="form-control svalidate" name="ProducerName"
+                                               data-val="true" data-val-required="Producer Name is required." placeholder="Producer Name" />
+                                        <span class="text-danger error field-validation-valid" data-valmsg-for="ProducerName" data-valmsg-replace="true"></span>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <label for="lblGender" class="col-form-label">Gender </label>
+                                        <label class="form-check-label" for="Movie" style="margin-right:31px;">
+                                            <input class="form-check-input" type="radio" name="genderRadios" id="rdoMale" value="Male" checked>
+                                            Male
+                                        </label>
+                                        <label class="form-check-label" for="Producer" style="margin-right:31px;">
+                                            <input class="form-check-input" type="radio" name="genderRadios" id="rdoFemale" value="Female">
+                                            Female
+                                        </label>
+                                        <span class="text-danger error field-validation-valid" data-valmsg-for="genderRadios" data-valmsg-replace="true"></span>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label for="lblProducerDateOfBirth" class="col-form-label">Date Of Birth</label>
+                                        <input type="date" id="txtProducerDateOfBirth" class="form-control" name="ProducerDateOfBirth"
+                                               data-val="true" data-val-required="Producer Date of birth is required." placeholder="Date of birth">
+                                        <span class="text-danger error field-validation-valid" data-valmsg-for="ProducerDateOfBirth" data-valmsg-replace="true"></span>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <label for="lblProducerBio" class="col-form-label">Producer Bio</label>
+                                        <textarea id="txtProducerBio" class="form-control" style="height: 100px" name="ProducerBio"
+                                               data-val="true" data-val-required="Producer Bio is required." placeholder="Producer Bio"></textarea>
+                                        <span class="text-danger error field-validation-valid" data-valmsg-for="ProducerBio" data-valmsg-replace="true"></span>
+                                    </div>
+                                    
+                                </form>
+                            </div>
+
+                            <div id="divActors">
+                                <form id="formActor" class="row g-3 needs-validation" novalidate>
+                                    <div class="col-md-4">
+                                        <label for="lblActorName" class="col-form-label">Actor Name</label>
+                                        <input type="text" id="txtActorName" class="form-control svalidate" name="ActorName"
+                                               data-val="true" data-val-required="Actor Name is required." placeholder="Actor Name" />
+                                        <span class="text-danger error field-validation-valid" data-valmsg-for="ActorName" data-valmsg-replace="true"></span>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <label for="lblGender" class="col-form-label">Gender </label>
+                                        <label class="form-check-label" for="Movie" style="margin-right:31px;">
+                                            <input class="form-check-input" type="radio" name="actorGenderRadios" id="rdoActorMale" value="Male" checked>
+                                            Male
+                                        </label>
+                                        <label class="form-check-label" for="Actor" style="margin-right:31px;">
+                                            <input class="form-check-input" type="radio" name="actorGenderRadios" id="rdoActorFemale" value="Female">
+                                            Female
+                                        </label>
+                                        <span class="text-danger error field-validation-valid" data-valmsg-for="actorGenderRadios" data-valmsg-replace="true"></span>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label for="lblActorDateOfBirth" class="col-form-label">Date Of Birth</label>
+                                        <input type="date" id="txtActorDateOfBirth" class="form-control" name="ActorDateOfBirth"
+                                               data-val="true" data-val-required="Actor Date of birth is required." placeholder="Date of birth">
+                                        <span class="text-danger error field-validation-valid" data-valmsg-for="ActorDateOfBirth" data-valmsg-replace="true"></span>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <label for="lblActorBio" class="col-form-label">Actor Bio</label>
+                                        <textarea id="txtActorBio" class="form-control" style="height: 100px" name="ActorBio"
+                                               data-val="true" data-val-required="Actor Bio is required." placeholder="Actor Bio"></textarea>
+                                        <span class="text-danger error field-validation-valid" data-valmsg-for="ActorBio" data-valmsg-replace="true"></span>
+                                    </div>
+                                    
+                                </form>
+                            </div>
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" id="btnMovieCancel" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="button" id="btnSave" class="btn btn-primary">Save</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+</main>
+<!-- End #main -->
+
+<script src="~/Module/Movie/MovieJS.js" asp-append-version="true"></script>
